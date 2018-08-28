@@ -17,3 +17,4 @@ This hack uses DLL injection via `LoadLibraryA` (`loader.cpp`). On startup, it h
 - [mhook - A Windows API hooking library](https://github.com/martona/mhook)
 - [JKA SDK](https://jkhub.org/files/file/1137-jedi-academy-sdk/)
 - [Q3 Source Code](https://github.com/id-Software/Quake-III-Arena)
+- [JD Hook](http://aimbots.net/threads/13871-star-wars-Academy-Clienthook?s=8b499d2ecb5ca24cf45b3de98fad3376)
