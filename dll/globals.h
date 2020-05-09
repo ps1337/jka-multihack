@@ -14,7 +14,7 @@
 //---------------------------
 
 // jamp.exe base address
-extern char* JAMP_BASE;
+extern char *JAMP_BASE;
 
 // offset for the camera angles
 // only used for spinbot, aimbot works with `SendInput()`
@@ -32,32 +32,30 @@ extern VMMain originalVMMain;
 // type of `pointer to dllEntry` to dynamically hook it
 // the parameters and result values can be found in the original
 // function prototype of the engine code
-typedef int (*DLLENTRY)(int(QDECL*)(int, ...));
+typedef int (*DLLENTRY)(int(QDECL *)(int, ...));
 extern DLLENTRY originalDLLEntry;
 
 // engine struct (e.g. to add custom shaders)
 // will be populated in `CG_Init`
-extern cgs_t* client_gameState;
+extern cgs_t *client_gameState;
 
 // additional internal engine game state structs
 // which will be populated by hooking q3 VM system calls
-extern cg_t* client_game;
-extern gameState_t* gameState;
+extern cg_t *client_game;
+extern gameState_t *gameState;
 
 // complete information about the current player
-extern playerState_t* ps;
+extern playerState_t *ps;
 
 // -----
 // Cvars to control the hack via the in-game console
 // -----
-// 
+//
 extern vmCvar_t WALLHACK;
 extern vmCvar_t CHEATS;
 extern vmCvar_t TRIGGERBOT;
 extern vmCvar_t GLOW;
 extern vmCvar_t ANTIGRIP;
-extern vmCvar_t NOD;
-extern vmCvar_t SPIN;
 extern vmCvar_t ANTITRICK;
 extern vmCvar_t AIM;
 
@@ -70,15 +68,15 @@ extern v3_t SCREEN;
 //extern std::map<int, int> mClientTeams;
 
 // the local player entity
-extern centity_t* pPlayerEnt;
+extern centity_t *pPlayerEnt;
 
-extern centity_t* pCurPushTarget;
-extern centity_t* pCurAimTarget;
+extern centity_t *pCurPushTarget;
+extern centity_t *pCurAimTarget;
 extern std::string curAimTargetName;
 
 // to keep track of all entities in the VM
 // this gets filled by hooking the `CG_GETDEFAULTSTATE` syscall in `dllMain`
-extern centity_t* pEntities[MAX_GENTITIES];
+extern centity_t *pEntities[MAX_GENTITIES];
 // the currently processed entity in `cg_entities`
 extern int idxCurEnt;
 
@@ -86,7 +84,7 @@ extern int idxCurEnt;
 // Windows specific types
 // -------------------------
 // define a type of `pointer to GetProcAddress` to dynamically hook it
-typedef FARPROC(WINAPI* pGetProcAddress)(HMODULE, LPCSTR);
+typedef FARPROC(WINAPI *pGetProcAddress)(HMODULE, LPCSTR);
 
 // --------
 // Settings and states

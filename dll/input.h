@@ -6,13 +6,20 @@
 #include "toolbox.h"
 
 // For the aimbot
-void moveMouse(v3_t point) {
-    if (!client_game) { return; }
+void moveMouse(v3_t point)
+{
+    if (!client_game)
+    {
+        return;
+    }
 
     // only if game is not minimized
-    if (!isJKAForeground()) { return; }
+    if (!isJKAForeground())
+    {
+        return;
+    }
 
-    INPUT Input = { 0 };
+    INPUT Input = {0};
     Input.type = INPUT_MOUSE;
     Input.mi.dwFlags = MOUSEEVENTF_MOVE;
     Input.mi.dx = point.x - client_game->refdef.width / 2;
@@ -21,11 +28,15 @@ void moveMouse(v3_t point) {
     SendInput(1, &Input, sizeof(INPUT));
 }
 
-void moveMouseStatic(v3_t point) {
+void moveMouseStatic(v3_t point)
+{
     // only if game is not minimized
-    if (!isJKAForeground()) { return; }
+    if (!isJKAForeground())
+    {
+        return;
+    }
 
-    INPUT Input = { 0 };
+    INPUT Input = {0};
     Input.type = INPUT_MOUSE;
     Input.mi.dwFlags = MOUSEEVENTF_MOVE;
 
@@ -35,17 +46,18 @@ void moveMouseStatic(v3_t point) {
     SendInput(1, &Input, sizeof(INPUT));
 }
 
-// For the spinbot
-// --> Works with chat bubble up
-void setCameraAngles(float x, float y) {
+void setCameraAngles(float x, float y)
+{
     memcpy((JAMP_BASE + ANGLE_X_OFFSET), &x, sizeof(x));
     memcpy((JAMP_BASE + ANGLE_Z_OFFSET), &y, sizeof(y));
 }
 
-void setCameraXAngle(float x) {
+void setCameraXAngle(float x)
+{
     memcpy((JAMP_BASE + ANGLE_X_OFFSET), &x, sizeof(x));
 }
 
-void setCameraYAngle(float y) {
+void setCameraYAngle(float y)
+{
     memcpy((JAMP_BASE + ANGLE_Z_OFFSET), &y, sizeof(y));
 }
