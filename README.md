@@ -1,20 +1,13 @@
 # jka-multihack
 
-This is a multihack for the q3 based game Jedi Academy with these features:
+This is a multihack for the idTech3 based game Jedi Academy with these features:
 
 - Wallhack
 - Player glow (team and duel aware)
 - Cheat unlocker
 - Triggerbot
+- Aimbot
+- Anti Grip
+- Anti Mind Trick
 
-![alt text](https://github.com/ps1337/r/blob/master/jka-multihack/wallhax.jpg?raw=true)
-
-## How it works
-
-This hack uses DLL injection via `LoadLibraryA` (`loader.cpp`). On startup, it hooks system calls of the q3 game VM to inject custom code into the game process.
-
-## Resources
-- [mhook - A Windows API hooking library](https://github.com/martona/mhook)
-- [JKA SDK](https://jkhub.org/files/file/1137-jedi-academy-sdk/)
-- [Q3 Source Code](https://github.com/id-Software/Quake-III-Arena)
-- [JD Hook](http://aimbots.net/threads/13871-star-wars-Academy-Clienthook?s=8b499d2ecb5ca24cf45b3de98fad3376)
+For a detailed writeup check out [this blog post](https://bananamafia.dev/post/multihack/).
